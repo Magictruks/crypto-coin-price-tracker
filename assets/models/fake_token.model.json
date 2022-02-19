@@ -1,0 +1,27 @@
+[
+  {
+    "label": "eth",
+    "previousPrice": 4112.06,
+    "actualPrevious": 4132.06
+  },
+  {
+    "label": "btc",
+    "previousPrice": 4152.06,
+    "actualPrevious": 4132.06
+  },
+  {
+    "label": "bnb",
+    "previousPrice": 4142.06,
+    "actualPrevious": 4132.06
+  },
+  {
+    "label": "xrp",
+    "previousPrice": 4132.06,
+    "actualPrevious": 4132.06
+  },
+  {
+    "label": "dto",
+    "previousPrice": 4132.06,
+    "actualPrevious": 4132.06
+  }
+]

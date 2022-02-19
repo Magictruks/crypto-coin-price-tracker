@@ -1,0 +1,28 @@
+name: crypto_market
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.15.0 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.1
+  flutter_svg: ^1.0.3
+  flutter_polygon: ^0.3.0+2
+  indexed: ^0.0.6
+  fl_chart: ^0.45.0
+  container_tab_indicator: ^0.3.0
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/crypto/black/
