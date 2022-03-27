@@ -10,7 +10,8 @@ const Color kGreenColor = Color(0xFF448469);
 const Color kOrangeColor = Color(0xFFB46C38);
 const Color kPurpleColor = Color(0xFF8048B9);
 
-const Color kBottomSheetRadient = Color(0x108048B9);
+const Color kBottomSheetRadient = Color(0xFF8048B9);
+const Color kBottomSheetRadientOrange = Color(0xB4B46C38);
 const Color kFloatingButtonRadient = Color(0x28BEB4C9);
 
 const Color kFloatingButtonOrangeColor = Color(0xFFEE7A19);
@@ -25,5 +26,7 @@ const Color kCardGradientGreen = Color(0xFF0E1919);
 const Color kChipBackgroundGreen = Color(0xFF142B3D);
 const Color kChipTextGreen = Color(0xFF66DAB0);
 
-const Color kDetailOrangeGradient = Color(0x15EE7A19);
-const Color kDetailPurpleGradient = Color(0x159633F1);
+// const Color kDetailOrangeGradient = Color(0x15EE7A19);
+// const Color kDetailPurpleGradient = Color(0x159633F1);
+const Color kDetailOrangeGradient = Color(0x45EE7A19);
+const Color kDetailPurpleGradient = Color(0x029633F1);

@@ -152,7 +152,22 @@ class CryptoCardBottomSheet extends StatelessWidget {
               gradient: RadialGradient(
                 colors: [kBottomSheetRadient, Colors.transparent],
                 center: Alignment.center,
-                radius: 0.6,
+                radius: 0.5,
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(180.0)),
+            ),
+          ),
+        ),
+        Positioned(
+          top: -200 - topSpace,
+          child: Container(
+            height: Get.height,
+            width: Get.width,
+            decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                colors: [kBottomSheetRadientOrange, Colors.transparent],
+                center: Alignment.center,
+                radius: 0.5,
               ),
               borderRadius: BorderRadius.all(Radius.circular(180.0)),
             ),

@@ -18,135 +18,184 @@ class ChartView extends GetView<ChartController> {
   Widget build(BuildContext context) {
     return Container(
       color: kBackgroundColor,
-      child: Container(
-        decoration: const BoxDecoration(
-          gradient: RadialGradient(
-            colors: [kDetailPurpleGradient, kDetailOrangeGradient],
-            center: Alignment.centerRight,
-            radius: 1.8,
+      child: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                colors: [kDetailOrangeGradient, kBackgroundColor],
+                center: Alignment.bottomCenter,
+                radius: 3.2,
+              ),
+            ),
           ),
-        ),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-          ),
-          body: SafeArea(
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 2,
+          Container(
+            decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                colors: [kDetailPurpleGradient, kBackgroundColor],
+                center: Alignment.topCenter,
+                radius: 1.5,
+              ),
+            ),
+            child: Scaffold(
+                backgroundColor: Colors.transparent,
+                appBar: AppBar(
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                ),
+                body: SafeArea(
                   child: Column(
                     children: [
                       Expanded(
-                        flex: 3,
-                        child: CrytoSvg(token: token, size: 100,),
+                        flex: 2,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: CrytoSvg(
+                                token: token,
+                                size: 100,
+                              ),
+                            ),
+                            Expanded(
+                              child: RichText(
+                                text: const TextSpan(children: [
+                                  TextSpan(
+                                      text: '\$',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 24.0)),
+                                  TextSpan(
+                                      text: '10,000',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 36.0)),
+                                  TextSpan(
+                                      text: '.00',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20.0,
+                                          color: kGreyColor))
+                                ]),
+                              ),
+                            ),
+                            const Expanded(
+                              child: Chip(
+                                label: Text(
+                                  '+2.5% (24h)',
+                                  style: TextStyle(
+                                      color: kChipTextGreen,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                avatar: Icon(
+                                  Icons.arrow_drop_up,
+                                  color: kChipTextGreen,
+                                ),
+                                backgroundColor: kChipBackgroundGreen,
+                              ),
+                            ),
+                            const CryptoDetailsChart(),
+                            // DefaultTabController(
+                            //   length: 5,
+                            //   child: Container(
+                            //     color: kBackgroundColor,
+                            //     padding: EdgeInsets.all(8),
+                            //     child: Container(
+                            //       margin: EdgeInsets.symmetric(horizontal: 36.0),
+                            //       decoration: BoxDecoration(
+                            //         color: kDetailPurpleGradient,
+                            //         // border: Border.all(color: Colors.black, width: 3),
+                            //         borderRadius: BorderRadius.all(Radius.circular(18)),
+                            //       ),
+                            //       child: TabBar(
+                            //         padding: EdgeInsets.all(0),
+                            //
+                            //         tabs: [
+                            //           Tab(
+                            //             child: Text('1d'),
+                            //           ),
+                            //           Tab(
+                            //             child: Text('1w'),
+                            //           ),
+                            //           Tab(
+                            //             child: Text('1m'),
+                            //           ),
+                            //           Tab(
+                            //             child: Text('1y'),
+                            //           ),
+                            //           Tab(
+                            //             child: Text('All'),
+                            //           ),
+                            //         ],
+                            //         indicator: ContainerTabIndicator(
+                            //           color: kGreyColor,
+                            //           radius: BorderRadius.all(Radius.circular(16.0)),
+                            //           padding: EdgeInsets.all(8.0),
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                          ],
+                        ),
                       ),
                       Expanded(
-                        child: RichText(
-                          text: const TextSpan(children: [
-                            TextSpan(
-                                text: '\$',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 24.0)),
-                            TextSpan(
-                                text: '10,000',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 36.0)),
-                            TextSpan(
-                                text: '.00',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20.0,
-                                    color: kGreyColor))
-                          ]),
-                        ),
-                      ),
-                      const Expanded(
-                        child: Chip(
-                          label: Text(
-                            '+2.5% (24h)',
-                            style: TextStyle(
-                                color: kChipTextGreen,
-                                fontWeight: FontWeight.bold),
+                        child: Container(
+                          color: kBackgroundColor,
+                          padding: EdgeInsets.all(16.0),
+                          child: Column(
+                            children: const [
+                              CryptoDetailsInfo(
+                                title: 'Trading Volume',
+                                price: '\$2,310,444,879.91',
+                                percent: '16.06',
+                                isBullish: true,
+                              ),
+                              Divider(
+                                height: 20,
+                                thickness: 1,
+                                color: kGreyColor,
+                              ),
+                              CryptoDetailsInfo(
+                                title: 'Market Cap',
+                                price: '\$92,483,944,153.16',
+                                percent: '5.31',
+                                isBullish: false,
+                              ),
+                              Divider(
+                                height: 20,
+                                thickness: 1,
+                                color: kGreyColor,
+                              ),
+                              CryptoDetailsInfo(
+                                title: 'All Time High (May, 10, 2021)',
+                                price: '\$690.93',
+                                percent: '19.75',
+                                isBullish: false,
+                              ),
+                              Divider(
+                                height: 20,
+                                thickness: 1,
+                                color: kGreyColor,
+                              ),
+                              CryptoDetailsInfo(
+                                title: 'All Time Low (Aug, 01, 2017',
+                                price: '\$0.09611',
+                                percent: '576821.14',
+                                isBullish: true,
+                              ),
+                            ],
                           ),
-                          avatar: Icon(
-                            Icons.arrow_drop_up,
-                            color: kChipTextGreen,
-                          ),
-                          backgroundColor: kChipBackgroundGreen,
                         ),
-                      ),
-                      const CryptoDetailsChart(),
-                      // DefaultTabController(
-                      //   length: 5,
-                      //   child: Container(
-                      //     color: kBackgroundColor,
-                      //     padding: EdgeInsets.all(8),
-                      //     child: Container(
-                      //       margin: EdgeInsets.symmetric(horizontal: 36.0),
-                      //       decoration: BoxDecoration(
-                      //         color: kDetailPurpleGradient,
-                      //         // border: Border.all(color: Colors.black, width: 3),
-                      //         borderRadius: BorderRadius.all(Radius.circular(18)),
-                      //       ),
-                      //       child: TabBar(
-                      //         padding: EdgeInsets.all(0),
-                      //
-                      //         tabs: [
-                      //           Tab(
-                      //             child: Text('1d'),
-                      //           ),
-                      //           Tab(
-                      //             child: Text('1w'),
-                      //           ),
-                      //           Tab(
-                      //             child: Text('1m'),
-                      //           ),
-                      //           Tab(
-                      //             child: Text('1y'),
-                      //           ),
-                      //           Tab(
-                      //             child: Text('All'),
-                      //           ),
-                      //         ],
-                      //         indicator: ContainerTabIndicator(
-                      //           color: kGreyColor,
-                      //           radius: BorderRadius.all(Radius.circular(16.0)),
-                      //           padding: EdgeInsets.all(8.0),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
+                      )
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    color: kBackgroundColor,
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      children: const [
-                        CryptoDetailsInfo(title: 'Trading Volume', price: '\$2,310,444,879.91', percent: '16.06', isBullish: true,),
-                        Divider(height: 20, thickness: 1, color: kGreyColor,),
-                        CryptoDetailsInfo(title: 'Market Cap', price: '\$92,483,944,153.16', percent: '5.31', isBullish: false,),
-                        Divider(height: 20, thickness: 1, color: kGreyColor,),
-                        CryptoDetailsInfo(title: 'All Time High (May, 10, 2021)', price: '\$690.93', percent: '19.75', isBullish: false,),
-                        Divider(height: 20, thickness: 1, color: kGreyColor,),
-                        CryptoDetailsInfo(title: 'All Time Low (Aug, 01, 2017', price: '\$0.09611', percent: '576821.14', isBullish: true,),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
+                bottomNavigationBar: const BottomAppBar(
+                  color: kBackgroundColor,
+                )),
           ),
-          bottomNavigationBar: const BottomAppBar(
-            color: kBackgroundColor,
-          )
-        ),
+        ],
       ),
     );
     // return Container(
@@ -178,16 +227,35 @@ class CryptoDetailsInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: TextStyle(color: kGreyColor),),
-            SizedBox(height: 8,),
-            Text(price, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14.0),),
+            Text(
+              title,
+              style: TextStyle(color: kGreyColor),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Text(
+              price,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14.0),
+            ),
           ],
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(isBullish ? Icons.arrow_drop_up : Icons.arrow_drop_down, color: isBullish ? kGreenColor : kRedColor,),
-            Text('$percent%', style: TextStyle(color: isBullish ? kGreenColor : kRedColor, fontWeight: FontWeight.bold),),
+            Icon(
+              isBullish ? Icons.arrow_drop_up : Icons.arrow_drop_down,
+              color: isBullish ? kGreenColor : kRedColor,
+            ),
+            Text(
+              '$percent%',
+              style: TextStyle(
+                  color: isBullish ? kGreenColor : kRedColor,
+                  fontWeight: FontWeight.bold),
+            ),
           ],
         )
       ],
