@@ -8,4 +8,15 @@ class HomeController extends GetxController {
   final ScrollController scrollController = ScrollController();
   final Rx<double> scrollFadingOpacity = 1.0.obs;
 
+  bool onListNotification(ScrollNotification t) {
+    if (t.metrics.pixels >= t.metrics.maxScrollExtent &&
+        scrollFadingOpacity.value != 0.0) {
+      scrollFadingOpacity.value = 0.0;
+    }
+    if (t.metrics.pixels < t.metrics.maxScrollExtent &&
+        scrollFadingOpacity.value != 1.0) {
+      scrollFadingOpacity.value = 1.0;
+    }
+    return false;
+  }
 }

@@ -13,8 +13,8 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: ThemeData(
-        accentColor: kGreyColor,
-      ),
+          // accentColor: kGreyColor,
+          ),
     ),
   );
 }
