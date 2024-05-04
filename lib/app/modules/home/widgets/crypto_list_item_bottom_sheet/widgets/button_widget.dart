@@ -32,9 +32,11 @@ class CryptoBottomSheetButton extends StatelessWidget {
           elevation: 0,
         ),
         onPressed: () {
-          Get.to(() => ChartView(
-                token: label,
-              ));
+          Get.to(
+            () => ChartView(
+              token: label,
+            ),
+          );
         },
       ),
     );

@@ -27,24 +27,22 @@ class HomeCryptoListItem extends StatelessWidget {
   final int rank;
   final String description;
 
-  Color gradientColor(previousPrice, actualPrice) {
-    return previousPrice <= actualPrice ? kCardGradientGreen : kCardGradientRed;
-  }
+  Color gradientColor(previousPrice, actualPrice) =>
+      previousPrice <= actualPrice ? kCardGradientGreen : kCardGradientRed;
 
   Future<dynamic> buildHomeBottomSheet(String label, String fullLabel,
-      String description, double actualPrice, int rank) {
-    return Get.bottomSheet(
-      CryptoCardBottomSheet(
-        label: label,
-        fullLabel: fullLabel,
-        description: description,
-        rank: rank,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(35),
-      ),
-    );
-  }
+          String description, double actualPrice, int rank) =>
+      Get.bottomSheet(
+        CryptoCardBottomSheet(
+          label: label,
+          fullLabel: fullLabel,
+          description: description,
+          rank: rank,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(35),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +66,20 @@ class HomeCryptoListItem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
           width: double.infinity,
-          decoration: buildBoxDecoration(),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.transparent,
+                gradientColor(previousPrice, actualPrice),
+              ],
+              stops: const [0.4, 1],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(8.0),
+            ),
+          ),
           child: Row(
             children: [
               Expanded(
@@ -89,23 +100,6 @@ class HomeCryptoListItem extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  BoxDecoration buildBoxDecoration() {
-    return BoxDecoration(
-      gradient: LinearGradient(
-        colors: [
-          Colors.transparent,
-          gradientColor(previousPrice, actualPrice),
-        ],
-        stops: const [0.4, 1],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
-      borderRadius: const BorderRadius.all(
-        Radius.circular(8.0),
       ),
     );
   }

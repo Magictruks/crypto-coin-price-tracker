@@ -8,15 +8,16 @@ class FakeTokenModel {
   int? rank;
   double? marketCap;
 
-  FakeTokenModel(
-      {this.label,
-      this.fullLabel,
-      this.description,
-      this.previousPrice,
-      this.actualPrice,
-      this.volume,
-      this.rank,
-      this.marketCap});
+  FakeTokenModel({
+    this.label,
+    this.fullLabel,
+    this.description,
+    this.previousPrice,
+    this.actualPrice,
+    this.volume,
+    this.rank,
+    this.marketCap,
+  });
 
   FakeTokenModel.fromJson(Map<String, dynamic> json) {
     label = json['label'];
@@ -59,7 +60,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4112.06,
     actualPrice: 4112.06,
     rank: 2,
-    description: 'Ethereum is a global, open-source platform for decentralized applications. In other words, the vision is to create a world computer that anyone can build applications in a decentralized manner; while all states and data are distributed and publicly accessible. Ethereum supports smart contracts in which developers can write code in order to program digital value. Examples of decentralized apps (dapps) that are built on Ethereum includes token, non-fungible tokens, decentralized finance apps, lending protocol, decentralized exchanges, and much more.',
+    description:
+        'Ethereum is a global, open-source platform for decentralized applications. In other words, the vision is to create a world computer that anyone can build applications in a decentralized manner; while all states and data are distributed and publicly accessible. Ethereum supports smart contracts in which developers can write code in order to program digital value. Examples of decentralized apps (dapps) that are built on Ethereum includes token, non-fungible tokens, decentralized finance apps, lending protocol, decentralized exchanges, and much more.',
   ),
   FakeTokenModel(
     label: 'usdt',
@@ -67,7 +69,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 1.1,
     actualPrice: 1.0,
     rank: 3,
-    description: 'Tether is a stablecoin pegged to the US Dollar. A stablecoin is a type of cryptocurrency whose value is pegged to another fiat currency like the US Dollar or to a commodity like Gold.',
+    description:
+        'Tether is a stablecoin pegged to the US Dollar. A stablecoin is a type of cryptocurrency whose value is pegged to another fiat currency like the US Dollar or to a commodity like Gold.',
   ),
   FakeTokenModel(
     label: 'bnb',
@@ -75,7 +78,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4142.06,
     actualPrice: 4112.06,
     rank: 4,
-    description: 'Binance Coin (BNB) is an exchange-based token created and issued by the cryptocurrency exchange Binance. Initially created on the Ethereum blockchain as an ERC-20 token in July 2017, BNB was migrated over to Binance Chain in February 2019 and became the native coin of the Binance Chain.',
+    description:
+        'Binance Coin (BNB) is an exchange-based token created and issued by the cryptocurrency exchange Binance. Initially created on the Ethereum blockchain as an ERC-20 token in July 2017, BNB was migrated over to Binance Chain in February 2019 and became the native coin of the Binance Chain.',
   ),
   FakeTokenModel(
     label: 'usdc',
@@ -83,7 +87,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 1.00,
     actualPrice: 1.00,
     rank: 5,
-    description: 'USDC is a fully collateralized US dollar stablecoin. USDC is the bridge between dollars and trading on cryptocurrency exchanges. The technology behind CENTRE makes it possible to exchange value between people, businesses and financial institutions just like email between mail services and texts between SMS providers. We believe by removing artificial economic borders, we can create a more inclusive global economy.',
+    description:
+        'USDC is a fully collateralized US dollar stablecoin. USDC is the bridge between dollars and trading on cryptocurrency exchanges. The technology behind CENTRE makes it possible to exchange value between people, businesses and financial institutions just like email between mail services and texts between SMS providers. We believe by removing artificial economic borders, we can create a more inclusive global economy.',
   ),
   FakeTokenModel(
     label: 'xrp',
@@ -91,7 +96,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4142.06,
     actualPrice: 4112.06,
     rank: 6,
-    description: 'Ripple is a privately-held fintech company that provides a global payment solution via its patented payment network called Ripple Network (also known as RippleNet). RippleNet is a payment network that is built on top of Ripple’s consensus ledger, called XRP Ledger (also known as XRPL). Ripple funded the development of the open-source XRP Ledger.',
+    description:
+        'Ripple is a privately-held fintech company that provides a global payment solution via its patented payment network called Ripple Network (also known as RippleNet). RippleNet is a payment network that is built on top of Ripple’s consensus ledger, called XRP Ledger (also known as XRPL). Ripple funded the development of the open-source XRP Ledger.',
   ),
   FakeTokenModel(
     label: 'ada',
@@ -99,7 +105,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4112.06,
     actualPrice: 4112.06,
     rank: 7,
-    description: 'Every blockchain project has a token of value commonly referred to as a cryptocurrency. Ada is the cryptocurrency on the Cardano blockchain. With Ada, holders can send value between friends, pay for a good or service, deposit funds on an exchange, or enter an application. To perform a transfer on the settlement layer requires you own Ada, or acquire Ada through an exchange. It will also be the native token to be used in applications built on the computation layer.',
+    description:
+        'Every blockchain project has a token of value commonly referred to as a cryptocurrency. Ada is the cryptocurrency on the Cardano blockchain. With Ada, holders can send value between friends, pay for a good or service, deposit funds on an exchange, or enter an application. To perform a transfer on the settlement layer requires you own Ada, or acquire Ada through an exchange. It will also be the native token to be used in applications built on the computation layer.',
   ),
   FakeTokenModel(
     label: 'sol',
@@ -107,7 +114,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4142.06,
     actualPrice: 4112.06,
     rank: 8,
-    description: 'Solana crypto is a high throughput blockchain based on the Proof of History (PoH) and Proof of Stake (PoS) consensus. Built by a team of networking engineers, Solana aims to become the blockchain infrastucture for modern internet applications.',
+    description:
+        'Solana crypto is a high throughput blockchain based on the Proof of History (PoH) and Proof of Stake (PoS) consensus. Built by a team of networking engineers, Solana aims to become the blockchain infrastucture for modern internet applications.',
   ),
   // FakeTokenModel(
   //   label: 'avax',
@@ -131,7 +139,8 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4112.06,
     actualPrice: 4112.06,
     rank: 11,
-    description: 'Polkadot is a platform that allows diverse blockchains to transfer messages, including value, in a trust-free fashion; sharing their unique features while pooling their security. In brief, Polkadot is a scalable heterogeneous multi-chain technology.',
+    description:
+        'Polkadot is a platform that allows diverse blockchains to transfer messages, including value, in a trust-free fashion; sharing their unique features while pooling their security. In brief, Polkadot is a scalable heterogeneous multi-chain technology.',
   ),
   FakeTokenModel(
     label: 'doge',
@@ -139,6 +148,7 @@ final List<FakeTokenModel> fake_token_data = [
     previousPrice: 4112.06,
     actualPrice: 4112.06,
     rank: 12,
-    description: 'Dogecoin is a cryptocurrency that was created on December 6th, 2013 based on the popular "Doge" Internet meme and features a Shiba Inu on its logo.',
+    description:
+        'Dogecoin is a cryptocurrency that was created on December 6th, 2013 based on the popular "Doge" Internet meme and features a Shiba Inu on its logo.',
   ),
 ];

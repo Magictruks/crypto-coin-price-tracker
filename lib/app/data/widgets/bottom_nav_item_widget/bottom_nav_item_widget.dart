@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 class BottomNavItem extends StatelessWidget {
   const BottomNavItem({
     Key? key,
-    required this.label,
+    this.label,
     required this.icon,
     this.iconOpacity = 1.0,
     this.labelColor = kIconColor,
     this.spacing = 5,
   }) : super(key: key);
 
-  final String label;
+  final String? label;
   final IconData icon;
   final double iconOpacity;
   final Color labelColor;
@@ -32,10 +32,11 @@ class BottomNavItem extends StatelessWidget {
             color: kIconColor,
           ),
         ),
-        Text(
-          label,
-          style: TextStyle(color: labelColor),
-        )
+        if (label != null)
+          Text(
+            label!,
+            style: TextStyle(color: labelColor),
+          )
       ],
     );
   }

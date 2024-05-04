@@ -24,18 +24,24 @@ class HomeView extends GetView<HomeController> {
           children: [
             const HomeTitle(),
             Expanded(
-              child: Container(
+              child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Stack(
                   children: [
                     NotificationListener(
-                      child: const HomeCryptoList(),
+                      child: HomeCryptoList(
+                        items: controller.tokens,
+                        scrollController: controller.scrollController,
+                      ),
                       onNotification: (ScrollNotification t) {
                         return controller.onListNotification(t);
                       },
                     ),
-                    const IgnorePointer(
-                      child: HomeBottomHighLight(),
+                    IgnorePointer(
+                      child: Obx(() => HomeBottomHighLight(
+                            scrollFadingOpacity:
+                                controller.scrollFadingOpacity.value,
+                          )),
                     )
                   ],
                 ),

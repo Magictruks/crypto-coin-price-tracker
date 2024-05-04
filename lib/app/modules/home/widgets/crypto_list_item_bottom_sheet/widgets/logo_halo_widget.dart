@@ -20,7 +20,9 @@ class CryptoBottomSheetLogoHalo extends StatelessWidget {
           center: Alignment.center,
           radius: 0.5,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(180.0)),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(180.0),
+        ),
       ),
     );
   }

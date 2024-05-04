@@ -4,24 +4,27 @@ import 'package:get/get.dart';
 
 import '../../../../constant.dart';
 
-class HomeBottomHighLight extends GetView<HomeController> {
-  const HomeBottomHighLight({Key? key}) : super(key: key);
+class HomeBottomHighLight extends StatelessWidget {
+  const HomeBottomHighLight({
+    Key? key,
+    required this.scrollFadingOpacity,
+  }) : super(key: key);
+
+  final double scrollFadingOpacity;
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => AnimatedOpacity(
-        opacity: controller.scrollFadingOpacity.value,
-        duration: const Duration(milliseconds: 500),
-        child: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.transparent, kGreyColor],
-            stops: [0.95, 1],
-          )),
-        ),
+    return AnimatedOpacity(
+      opacity: scrollFadingOpacity,
+      duration: const Duration(milliseconds: 500),
+      child: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Colors.transparent, kGreyColor],
+          stops: [0.95, 1],
+        )),
       ),
     );
   }
