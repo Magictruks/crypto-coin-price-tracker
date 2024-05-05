@@ -19,6 +19,15 @@ class ChartView extends GetView<ChartController> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
+          leading: IconButton(
+            icon: Icon(
+              Icons.adaptive.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
         ),
         body: SafeArea(
           child: Column(
