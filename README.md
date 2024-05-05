@@ -3,9 +3,11 @@
 <p align="center">
 
 <div align="center">
-  <a href="https://github.com/Magictruks/i18n-convert-translate-file">
-    <img src="assets/screenshot/home_screen.png" alt="Logo">
-  </a>
+<p float="left">
+  <img src="assets/screenshot/home_screen.png" width="100" />
+  <img src="assets/screenshot/home_screen_modal.png" width="100" /> 
+  <img src="assets/screenshot/details_screen.png" width="100" />
+</p>
 </div>
 
 <br>
