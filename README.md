@@ -4,9 +4,9 @@
 
 <div align="center">
 <p float="left">
-  <img src="assets/screenshot/home_screen.png" width="100" />
-  <img src="assets/screenshot/home_screen_modal.png" width="100" /> 
-  <img src="assets/screenshot/details_screen.png" width="100" />
+  <img src="assets/screenshot/home_screen.png" width="30%" />
+  <img src="assets/screenshot/home_screen_modal.png" width="30%" /> 
+  <img src="assets/screenshot/details_screen.png" width="30%" />
 </p>
 </div>
 
